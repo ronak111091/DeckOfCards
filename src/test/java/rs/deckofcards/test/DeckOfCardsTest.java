@@ -1,5 +1,7 @@
 package rs.deckofcards.test;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -7,6 +9,8 @@ import rs.deckofcards.model.Card;
 import rs.deckofcards.service.DeckOfCards;
 
 public class DeckOfCardsTest {
+	
+	private static final Logger logger = LogManager.getLogger(DeckOfCardsTest.class);
 	
 	private DeckOfCards createDeck(){
 		return new DeckOfCards();
@@ -24,6 +28,7 @@ public class DeckOfCardsTest {
 		DeckOfCards deckOfCards = createDeck();
 		Assert.assertNotNull(deckOfCards);
 		deckOfCards.displayCards();
+		logger.info("**************Shuffling the deck**************");
 		deckOfCards.shuffle();
 		deckOfCards.displayCards();
 	}

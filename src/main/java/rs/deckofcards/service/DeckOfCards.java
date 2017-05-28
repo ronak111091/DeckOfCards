@@ -5,6 +5,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import rs.deckofcards.model.Card;
 import rs.deckofcards.model.FaceValue;
 import rs.deckofcards.model.Suit;
@@ -12,6 +15,8 @@ import rs.deckofcards.model.Suit;
 public class DeckOfCards {
 	
 	private LinkedList<Card> deck;
+	
+	private static final Logger logger = LogManager.getLogger(DeckOfCards.class);
 	
 	public List<Card> getDeck() {
 		return deck;
@@ -41,13 +46,13 @@ public class DeckOfCards {
 	}
 	
 	public void displayCards(){
-		System.out.println("***************Deck of cards***************");
+		logger.info("***************Deck of cards***************");
 		Iterator<Card> iterator = deck.iterator();
 		Card card = null;
 		while(iterator.hasNext()){
 			card=iterator.next();
-			System.out.println(card);
+			logger.info(card);
 		}
-		System.out.println("Deck size: "+deck.size());
+		logger.info("Deck size: "+deck.size());
 	}
 }
