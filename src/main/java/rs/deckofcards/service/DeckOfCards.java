@@ -35,7 +35,9 @@ public class DeckOfCards {
 	}
 	
 	public void shuffle(){
-		Collections.shuffle(deck);
+		if(!deck.isEmpty()){
+			Collections.shuffle(deck);
+		}
 	}
 	
 	public Card dealOneCard(){
