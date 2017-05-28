@@ -3,6 +3,7 @@ package rs.deckofcards.service;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 import rs.deckofcards.model.Card;
 import rs.deckofcards.model.FaceValue;
@@ -11,10 +12,14 @@ import rs.deckofcards.model.Suit;
 public class DeckOfCards {
 	
 	private LinkedList<Card> deck;
+	
+	public List<Card> getDeck() {
+		return deck;
+	}
 
 	public DeckOfCards() {
 		super();
-		this.deck= new LinkedList<>();
+		deck= new LinkedList<>();
 		Card card = null;
 		for(Suit suit : Suit.values()){
 			for(FaceValue faceValue : FaceValue.values()){
