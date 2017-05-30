@@ -57,4 +57,8 @@ public class DeckOfCards {
 		}
 		logger.info("Deck size: "+deck.size());
 	}
+	
+	public int getDeckSize(){
+		return deck.size();
+	}
 }
