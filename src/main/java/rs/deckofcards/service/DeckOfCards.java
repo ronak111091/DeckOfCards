@@ -35,7 +35,7 @@ public class DeckOfCards {
 	}
 	
 	public void shuffle(){
-		if(!deck.isEmpty()){
+		if(deck.size()>1){
 			Collections.shuffle(deck);
 		}
 	}
